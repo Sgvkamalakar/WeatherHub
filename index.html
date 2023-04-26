@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/static/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="search">
+            <input type="text" placeholder="Enter city name">
+            <button id="search-button" type="button" class="btn btn-primary">
+                <i class="bi-search"></i></button>
+        </div>
+        <div class="error">
+            <p>Invalid City name</p>
+        </div>
+        <div class="weather">
+            <img src="assets/img/weather.png" class="icon" alt="image">
+            <h1 class="temperature">? °C</h1>
+            <h2 class="city">City</h2>
+            <div class="detail">
+                <div class="col">
+                    <img src="assets/img/humid.png" class="icon" alt="hum">
+                    <div class="humidity">
+                        <p class="humidityP">? %</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="assets/img/wind.png"class="icon" alt="wind">
+                    <div class="wind">
+                        <p class="windS">? kmph</p>
+                        <p>Wind</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            const inp=document.querySelector('.search input');
+            const btn=document.querySelector('.search button');
+            const img=document.querySelector('.icon')
+            async function getWeather(city)
+            {
+                var res=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e79b605570957240370fcbf6bff87177&units=metric`);
+                if (res.status==404)
+                {
+                    document.querySelector('.error').style.display="block";
+                    
+                    document.querySelector('.temperature').innerHTML="? °C";
+                    document.querySelector('.city').innerHTML='Invalid city';
+                    document.querySelector('.humidityP').innerHTML="? %";
+                    document.querySelector('.windS').innerHTML="? kmph";
+                    img.src="assets/img/weather.png";
+                }
+                else{
+                        document.querySelector('.error').style.display="none";
+        
+                var data=await res.json();
+                console.log(data);
+                document.querySelector('.temperature').innerHTML=data.main.temp+" °C";
+                document.querySelector('.city').innerHTML=data.name;
+                document.querySelector('.humidityP').innerHTML=data.main.humidity+" %";
+                document.querySelector('.windS').innerHTML=data.wind.speed+" kmph";
+                
+                if(data.weather[0].main=="Clouds")
+                {
+                    img.src="assets/img/clouds.png"
+                }
+                else if(data.weather[0].main=="Clear")
+                {
+                    img.src="assets/img/clear.png"
+                }
+                else if(data.weather[0].main=="Rain")
+                {
+                    img.src="assets/img/rain.png"
+                }
+                else if(data.weather[0].main=="Drizzle")
+                {
+                    img.src="assets/img/drizzle.png"
+                }
+                else if(data.weather[0].main=="Mist")
+                {
+                    img.src="assets/img/mist.png"
+                }
+                else if(data.weather[0].main=="Thunderstorm")
+                {
+                    img.src="assets/img/storm.png"
+                }
+                else if(data.weather[0].main=="Haze")
+                {
+                    img.src="assets/img/mist.png"
+                }
+            }
+        
+            }
+            btn.addEventListener('click', () => {
+                getWeather(inp.value);
+            })
+            
+        </script>
+    </body>
+</html>
