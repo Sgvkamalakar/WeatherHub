@@ -11,6 +11,16 @@ body{
     /* background: rgb(43, 96, 145) */
 
 }
+.heading
+{
+    /* background-color: rgb(6, 24, 222);
+     */
+     background: linear-gradient(130deg,rgb(1, 40, 122),rgb(166, 166, 247));
+    text-align:center;
+    font-size:2em;
+    font-weight: 400;
+    color:rgb(0, 0, 0);
+}
 .container{
     width:450px;
     background: linear-gradient(130deg,rgb(43,99,218),rgb(22,22,220));
