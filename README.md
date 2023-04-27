@@ -15,7 +15,8 @@ WeatherHub uses the OpenWeatherMap API (https://openweathermap.org/api) to acces
 The API provides accurate and reliable weather information,
 allowing users to make informed decisions based on the latest weather updates.
 
-##Gallery
+## Gallery
+I have added webiste pictures..
 
 ![image](https://user-images.githubusercontent.com/103712713/234936509-d01088b6-fba1-40ad-8dc1-3a940f3a383b.png)
 
