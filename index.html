@@ -68,11 +68,11 @@
                 if (res.status==404)
                 {
                     document.querySelector('.error').style.display="block";
-                    document.querySelector('.weather-type').innerHTML="-";
-                    document.querySelector('.temperature').innerHTML="? °C";
-                    document.querySelector('.city').innerHTML='Invalid city';
-                    document.querySelector('.humidityP').innerHTML="? %";
-                    document.querySelector('.windS').innerHTML="? kmph";
+                    document.querySelector('.weather-type').innerHTML="";
+                    document.querySelector('.temperature').innerHTML="";
+                    document.querySelector('.city').innerHTML='Invalid city name';
+                    document.querySelector('.humidityP').innerHTML="";
+                    document.querySelector('.windS').innerHTML="";
                     img.src="assets/img/weather.png";
                 }
                 else{
