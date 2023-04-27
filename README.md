@@ -17,11 +17,18 @@ allowing users to make informed decisions based on the latest weather updates.
 
 ##Gallery
 
-![image](https://user-images.githubusercontent.com/103712713/234863167-3d965f23-dec3-4153-856d-a82bf594450e.png)
+![image](https://user-images.githubusercontent.com/103712713/234936509-d01088b6-fba1-40ad-8dc1-3a940f3a383b.png)
 
 
-![image](https://user-images.githubusercontent.com/103712713/234863892-9f5e01e9-4e26-4916-9b29-09f4b1e5c739.png)
+![image](https://user-images.githubusercontent.com/103712713/234936604-4ab5e451-e6e7-4e21-9872-9926149d0964.png)
 
 
-![image](https://user-images.githubusercontent.com/103712713/234862992-624e9722-55be-4b81-8d91-9f774e641f86.png)
+![image](https://user-images.githubusercontent.com/103712713/234936683-8ad0070c-0efe-4bf3-943f-487fdb6a6477.png)
+
+
+![image](https://user-images.githubusercontent.com/103712713/234936746-47457d52-fa67-49c5-85cf-0560ff97d018.png)
+
+
+![image](https://user-images.githubusercontent.com/103712713/234937400-220e16fa-7e33-4e1b-a0ce-e91a52e8efbf.png)
+
 
