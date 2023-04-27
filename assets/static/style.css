@@ -2,20 +2,14 @@
 {
     padding:0px;
     margin:0px;
-    /* box-sizing: border-box; */
-
 }
 
 body{
     background-color: black;
-    /* background: rgb(43, 96, 145) */
-
 }
 .heading
 {
-    /* background-color: rgb(6, 24, 222);
-     */
-     background: linear-gradient(130deg,rgb(56, 64, 175),rgb(0, 33, 111));
+    background: linear-gradient(130deg,rgb(31, 67, 129),rgb(0, 33, 111));
     text-align:center;
     font-size:2em;
     border-radius: 20px;
@@ -24,8 +18,9 @@ body{
 }
 .container{
     width:450px;
-    background: linear-gradient(130deg,rgb(43,99,218),rgb(22,22,220));
-    color:white;
+    background: linear-gradient(130deg,rgb(213, 215, 93),rgb(52,78,133));
+    color:black;
+    font-weight: 400;
     padding:20px;
     margin:50px auto 0;
     border-radius:10px;
@@ -59,6 +54,10 @@ body{
     border-radius:10px;
     padding:17px;
     margin-right:20px;
+    background-color:skyblue;
+    color:black;
+    font-size: 15px;
+    align-items:center;
 }
 
 .weather .icon
@@ -85,7 +84,6 @@ body{
     align-items:center;
     justify-content: space-between;
     padding:0px 20px;
-    /* margin-top:50px; */
     margin-left: auto;
     margin-top:50px;
 }
@@ -95,7 +93,6 @@ body{
     display:flex;
     align-items:center;
     text-align:left;
-    /* justify-content: space-between; */
 }
 .col img{
     width:45px;
@@ -137,13 +134,6 @@ body{
     padding:10px;
 }
 
-.location .col
-{   font-size:20px;
-    padding-left:15px;
-    text-align:left;
-    padding-top:1%;
-    display:none;
-}
 
 /* Styles for screens with a maximum width of 767px (mobile devices) */
 

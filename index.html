@@ -28,18 +28,6 @@
         <div class="error">
             <p>Invalid City name</p>
         </div>
-        <div class="location">
-        <div class="col">
-            <p class="Latitude">
-                Latitude
-            </p>
-        </div>
-        <div class="col">
-            <p class="Logitude">
-                Longitude
-            </p>
-        </div>
-        </div>
         <div class="weather">
             <img src="assets/img/weather.png" class="icon" alt="image">
             <h1 class="temperature">? °C</h1>
@@ -79,24 +67,20 @@
                 if (res.status==404)
                 {
                     document.querySelector('.error').style.display="block";
-                    
                     document.querySelector('.temperature').innerHTML="? °C";
                     document.querySelector('.city').innerHTML='Invalid city';
                     document.querySelector('.humidityP').innerHTML="? %";
                     document.querySelector('.windS').innerHTML="? kmph";
-                    document.querySelector('.location').style.display="block";
                     img.src="assets/img/weather.png";
                 }
                 else{
-                        document.querySelector('.error').style.display="none";
-                        document.querySelector('.location').style.display="none";
+                document.querySelector('.error').style.display="none";
                 var data=await res.json();
                 console.log(data);
                 document.querySelector('.temperature').innerHTML=data.main.temp+" °C";
                 document.querySelector('.city').innerHTML=data.name;
                 document.querySelector('.humidityP').innerHTML=data.main.humidity+" %";
                 document.querySelector('.windS').innerHTML=data.wind.speed+" kmph";
-                
                 if(data.weather[0].main=="Clouds")
                 {
                     img.src="assets/img/clouds.png"
