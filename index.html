@@ -13,10 +13,13 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     </head>
     <body>
-        <div class="heading">
+        <!-- <div class="heading">
             <p>WeatherHub - Weather App</p>
-        </div>
+        </div> -->
         <div class="container">
+            <div class="heading">
+                <p>WeatherHub - Weather App</p>
+            </div>
             <div class="search">
             <input type="text" placeholder="Enter city name">
             <button id="search-button" type="button" class="btn btn-primary">
@@ -24,6 +27,18 @@
         </div>
         <div class="error">
             <p>Invalid City name</p>
+        </div>
+        <div class="location">
+        <div class="col">
+            <p class="Latitude">
+                Latitude
+            </p>
+        </div>
+        <div class="col">
+            <p class="Logitude">
+                Longitude
+            </p>
+        </div>
         </div>
         <div class="weather">
             <img src="assets/img/weather.png" class="icon" alt="image">
@@ -45,8 +60,15 @@
                     </div>
                 </div>
             </div>
+            <div class="footer">
+                <p>Designed and Developed by<a href=https://www.linkedin.com/in/kamalakar-satapathi-9a6556213/ target="_blank"> Sgvkamalakar</a></a></span></p>
+            </div>
         </div>
+        
         </div>
+        <!-- <div class="footer">
+            <p>Designed and Developed by <span>Sgvkamalakar</span></p>
+        </div> -->
         <script>
             const inp=document.querySelector('.search input');
             const btn=document.querySelector('.search button');
@@ -62,11 +84,12 @@
                     document.querySelector('.city').innerHTML='Invalid city';
                     document.querySelector('.humidityP').innerHTML="? %";
                     document.querySelector('.windS').innerHTML="? kmph";
+                    document.querySelector('.location').style.display="block";
                     img.src="assets/img/weather.png";
                 }
                 else{
                         document.querySelector('.error').style.display="none";
-        
+                        document.querySelector('.location').style.display="none";
                 var data=await res.json();
                 console.log(data);
                 document.querySelector('.temperature').innerHTML=data.main.temp+" °C";

@@ -2,7 +2,7 @@
 {
     padding:0px;
     margin:0px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 
 }
 
@@ -15,11 +15,12 @@ body{
 {
     /* background-color: rgb(6, 24, 222);
      */
-     background: linear-gradient(130deg,rgb(1, 40, 122),rgb(166, 166, 247));
+     background: linear-gradient(130deg,rgb(56, 64, 175),rgb(0, 33, 111));
     text-align:center;
     font-size:2em;
+    border-radius: 20px;
     font-weight: 400;
-    color:rgb(0, 0, 0);
+    color:rgb(112, 248, 255);
 }
 .container{
     width:450px;
@@ -51,6 +52,13 @@ body{
     font-size:18px;
     background-color:skyblue;
     color:black;
+}
+
+.search button
+{
+    border-radius:10px;
+    padding:17px;
+    margin-right:20px;
 }
 
 .weather .icon
@@ -107,5 +115,32 @@ body{
     font-size: 1.3em;
     margin-left: 10px;
     margin-bottom: 10px;
+    display:none;
+}
+
+.footer
+{   
+    text-align: center;
+    align-items:center;
+    /* padding:10px; */
+    /* margin-top:20px; */
+    border-radius:10px;
+    font-weight: 300;
+    color:rgb(9, 234, 234);
+    background: linear-gradient(130deg,rgb(5, 0, 137),rgb(0, 0, 74));
+}
+.footer p
+{   
+    font-size:1.1em;
+    align-items:center;
+    margin-top:20px;
+    padding:10px;
+}
+
+.location .col
+{   font-size:20px;
+    padding-left:15px;
+    text-align:left;
+    padding-top:1%;
     display:none;
 }
