@@ -18,7 +18,7 @@ body{
 }
 .container{
     width:450px;
-    background: linear-gradient(130deg,rgb(213, 215, 93),rgb(52,78,133));
+    background: linear-gradient(130deg,rgb(182, 174, 69),rgb(43, 117, 144),rgb(32, 45, 133));
     color:black;
     font-weight: 400;
     padding:20px;
