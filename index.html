@@ -80,37 +80,78 @@
                 var data=await res.json();
                 console.log(data);
                 document.querySelector('.temperature').innerHTML="Temp: "+data.main.temp+" °C";
-                document.querySelector('.weather-type').innerHTML=data.weather[0].main;
+               // document.querySelector('.weather-type').innerHTML=data.weather[0].main;
                 document.querySelector('.city').innerHTML=data.name;
                 document.querySelector('.humidityP').innerHTML=data.main.humidity+" %";
                 document.querySelector('.windS').innerHTML=data.wind.speed+" kmph";
                 if(data.weather[0].main=="Clouds")
-                {
-                    img.src="assets/img/clouds.png"
+                { 
+                    if(data.weather[0].description=="scattered clouds")
+                    {
+                        img.src="assets/img/scattered clouds.png";
+                        document.querySelector('.weather-type').innerHTML="Scattered Clouds";
+                    }
+                    else if(data.weather[0].description=="broken clouds")
+                    {
+                        img.src="assets/img/broken clouds.png";
+                        document.querySelector('.weather-type').innerHTML="Broken Clouds";
+                    }
+                    else
+                    {   document.querySelector('.weather-type').innerHTML="Cloudy";
+                        img.src="assets/img/clouds.png";
+                    }
+                    
                 }
                 else if(data.weather[0].main=="Clear")
                 {
                     img.src="assets/img/clear.png"
+                    document.querySelector('.weather-type').innerHTML="Clear Sky";
                 }
                 else if(data.weather[0].main=="Rain")
-                {
-                    img.src="assets/img/rain.png"
+                { 
+                    desc=data.weather[0].description
+                    if(desc=="light rain")
+                    {
+                        img.src="assets/img/light rain.png";
+                        document.querySelector('.weather-type').innerHTML="Light Rain";
+                    }
+                    else if(desc=="freezing rain")
+                    {
+                        img.src="assets/img/freezing rain.png";
+                        document.querySelector('.weather-type').innerHTML="Freezing Rain";
+                    }
+                    else if(desc=="very heavy rain" || desc=="extreme rain" || desc=="heavy intensity rain")
+                    {   
+                        img.src="assets/img/heavy rains.png";
+                        document.querySelector('.weather-type').innerHTML="Heavy Rain";
+                    }
+                    else
+                    {
+                        img.src="assets/img/rain.png";
+                        document.querySelector('.weather-type').innerHTML="Rainy";
+                    }
                 }
                 else if(data.weather[0].main=="Drizzle")
-                {
-                    img.src="assets/img/drizzle.png"
-                }
-                else if(data.weather[0].main=="Mist")
-                {
-                    img.src="assets/img/mist.png"
+                { 
+                    document.querySelector('.weather-type').innerHTML="Drizzle";
+                    img.src="assets/img/drizzle.png";
                 }
                 else if(data.weather[0].main=="Thunderstorm")
-                {
-                    img.src="assets/img/storm.png"
+                {   document.querySelector('.weather-type').innerHTML="Thunderstorm";
+                    img.src="assets/img/storm.png";
                 }
-                else if(data.weather[0].main=="Haze")
+                else if(data.weather[0].main=="Haze" || data.weather[0].main=="Fog" || data.weather[0].main=="Dust" || data.weather[0].main=="Mist")
+                {   document.querySelector('.weather-type').innerHTML=data.weather[0].main;
+                    img.src="assets/img/mist.png";
+                }
+                else if(data.weather[0].main=="Snow")
+                {   document.querySelector('.weather-type').innerHTML="Snow";
+                    img.src="assets/img/snow.png";
+                }
+                else if(data.weather[0].main=="Tornado")
                 {
-                    img.src="assets/img/mist.png"
+                    document.querySelector('.weather-type').innerHTML="Tornado";
+                    img.src="assets/img/tornado.png";
                 }
             }
         
